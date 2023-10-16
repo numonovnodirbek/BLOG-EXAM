@@ -1,0 +1,51 @@
+#about-category {
+  padding: 80px 0;
+  background: #f4f0f8;
+  .about-category-content {
+    h1 {
+      color: #232536;
+      text-align: center;
+      font-family: "Sen";
+      font-size: 56px;
+      line-height: 64px; /* 114.286% */
+      letter-spacing: -2px;
+    }
+    p {
+      color: #6d6e76;
+      text-align: center;
+      font-family: "Inter";
+      font-size: 16px;
+      line-height: 28px; /* 175% */
+      max-width: 512px;
+      margin: 16px auto 32px;
+    }
+    .breadCrumb {
+      color: var(--Black, #232536);
+      text-align: center;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 20px; /* 125% */
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      a {
+        color: black;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+#categoryCards {
+  padding: 57px;
+  .categoryCards {
+    input {
+      border-radius: 2px;
+      border: 1px solid rgba(109, 110, 118, 0.5); 
+      padding: 24px;
+      width: 100%;
+    }
+  }
+}

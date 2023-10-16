@@ -1,0 +1,52 @@
+.slider-item {
+    margin-top: 64px;
+    padding: 0 10px;
+
+    img {
+      width: 100%;
+      max-height: 318px;
+      object-fit: cover;
+    }
+
+    .info {
+      margin-top: 32px;
+      color: var(--Dark-Grey, #4C4C4C);
+      font-family: Inter;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 20px;
+
+      span {
+        color: var(--Purple, #592EA9);
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px;
+      }
+
+    }
+
+    .lor {
+      margin-top: 20px;
+      color: var(--Black, #232536);
+      font-family: Sen;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 40px;
+      letter-spacing: -1px;
+    }
+
+    .lor-2 {
+      margin-top: 20px;
+      color: var(--Black, #232536);
+      font-family: Inter;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 28px;
+
+    }
+  }

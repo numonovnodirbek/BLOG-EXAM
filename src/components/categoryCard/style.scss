@@ -1,0 +1,37 @@
+.category-slider {
+  padding: 10px;
+  
+  .card-box {
+    transition: all 0.5s linear;
+    border: 1px solid #ccc;
+    padding: 30px;
+    height: 200px;
+    &:hover {
+      background-color: #ffd050;
+    }
+  }
+
+  .name {
+    color: var(--Black, #232536);
+    font-family: Sen;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -1px;
+  }
+  img {
+    border: none;
+    border-radius: 10px;
+    background-color: #fbf6ea;
+  }
+
+  .card-desc {
+    color: var(--Medium-grey, #6d6e76);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+  }
+}
