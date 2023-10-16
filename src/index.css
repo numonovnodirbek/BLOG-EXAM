@@ -68,3 +68,7 @@ button span{
   padding: 10px;
 }
 
+.navButton{
+  border: none !important;
+  padding: 16px 48px !important;
+}

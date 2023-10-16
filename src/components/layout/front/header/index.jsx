@@ -37,7 +37,7 @@ const Header = () => {
         <div className="wrap">
           {isAuthenticated ? (
             <div className="logo">
-              <img onClick={logout} src={logoutIcon} alt="" title="Logout"/>
+              <img onClick={logout} src={logoutIcon} alt="" title="Logout" />
               <NavLink to="/myposts" style={{ color: "yellow" }}>
                 My Posts
               </NavLink>
@@ -63,11 +63,11 @@ const Header = () => {
             </li>
             <li className="nav-menu">
               {isAuthenticated ? (
-                <NavLink to="/account">
+                <NavLink to="/account" className="navButton">
                   <button>Account</button>
                 </NavLink>
               ) : (
-                <NavLink to="/login">
+                <NavLink to="/login" className="navButton">
                   <button>Login</button>
                 </NavLink>
               )}
