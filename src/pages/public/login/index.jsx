@@ -76,7 +76,7 @@ const LoginPage = () => {
               <p className="text-danger">{errors.password.message}</p>
             ) : null}
           </div>
-          <input className="button" type="submit" value="Login"/>
+          <input className="button" type="submit" value="Login" />
         </form>
       </div>
     </section>
