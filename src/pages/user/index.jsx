@@ -5,7 +5,7 @@ import { ExclamationCircleFilled } from "@ant-design/icons";
 import request from "../../server";
 import Card from "../../components/postCard";
 import Loading from "../../components/share/Loading";
-import { LIMIT } from "../../constants";
+import { IMG_URl, LIMIT } from "../../constants";
 
 import "../public/blog/style.scss";
 
@@ -22,7 +22,7 @@ const MyPostsPage = () => {
   const [photoId, setPhotoId] = useState(null);
   const [form] = Form.useForm();
   const [actions] = useState(true);
-  // const [, setEditFormData] = useState(null);
+  const [, setEditFormData] = useState(null);
 
   const showModal = () => {
     setIsModalOpen(true);
