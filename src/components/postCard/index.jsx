@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "./style.scss";
 
 import postImg from "../../assets/images/png/postCardImg.jpg";
-import getImage from "../../utils/getImage";
+// import getImage from "../../utils/getImage";
 
 /* eslint-disable react/prop-types */
 
@@ -16,7 +16,7 @@ const PostCard = ({ data, actions, editPost, deletePost }) => {
         <Link to={`/blogpost/${data._id}`}>
           <img
             // src={`${ENDPOINT}upload/${data.photo._id}.jpg`}
-            src={`${getImage(data.photo?._id)}.jpg` || postImg}
+            src={postImg}
             alt="postImg"
           />
         </Link>
