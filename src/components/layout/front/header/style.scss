@@ -13,10 +13,14 @@ header {
 
     .logo{
       position: relative;
+      
+    }
+
+    .menu{
+      display: flex;
+      align-items: center;
+      gap: 30px;
       img{
-        position: absolute;
-        left: -100%;
-        top: -9px;
         width: 35px;
         cursor: pointer;
         transition: .3s;

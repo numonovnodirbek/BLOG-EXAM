@@ -8,6 +8,7 @@ import Loading from "../../components/share/Loading";
 import { LIMIT } from "../../constants";
 
 import "../public/blog/style.scss";
+import "./style.scss";
 
 const MyPostsPage = () => {
   const [data, setData] = useState([]);
@@ -21,7 +22,7 @@ const MyPostsPage = () => {
   const [photoId, setPhotoId] = useState(null);
   const [editFormData, setEditFormData] = useState(null);
   const [sortedCategories, setSortedCategories] = useState([]);
-  const [categoryId, setCategoryId] = useState()
+  const [categoryId, setCategoryId] = useState();
   const [form] = Form.useForm();
   const [actions] = useState(true);
 
@@ -31,7 +32,6 @@ const MyPostsPage = () => {
   const hideModal = () => {
     setIsModalOpen(false);
     form.resetFields();
-    setimgSrc(null);
   };
 
   //GET CATEGORIES
@@ -61,7 +61,6 @@ const MyPostsPage = () => {
   }, [search, currentPage]);
 
   //------------------------------//
-
 
   //GET DATA
   const getData = async (page, search) => {
@@ -126,6 +125,7 @@ const MyPostsPage = () => {
     if (confirmDelete) {
       await request.delete(`post/${id}`);
       getData(currentPage);
+      window.location.reload(false);
     }
   };
 
@@ -164,7 +164,6 @@ const MyPostsPage = () => {
           message.error("Post creation failed. Please try again.");
         }
       }
-      window.location.reload(false);
     } catch (error) {
       console.error("Error creating post:", error);
       message.error(
@@ -173,8 +172,11 @@ const MyPostsPage = () => {
     }
   };
 
-
   //======================= PAGINATION ======================//
+
+  useEffect(() => {
+    getData(currentPage, search);
+  }, [search, currentPage]);
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -302,12 +304,12 @@ const MyPostsPage = () => {
                       Upload
                     </Upload>
                   </Form.Item>
-                  <Button danger type="primary" onClick={hideModal}>
-                    Close
-                  </Button>
-                  <Button type="primary" htmlType="submit">
-                    {selected ? "Save Post" : "Add Post"}
-                  </Button>
+                  <div className="formBtns">
+                    <Button onClick={hideModal}>Close</Button>
+                    <Button type="primary" htmlType="submit">
+                      {selected ? "Save Post" : "Add Post"}
+                    </Button>
+                  </div>
                 </Form>
               </Modal>
             </div>

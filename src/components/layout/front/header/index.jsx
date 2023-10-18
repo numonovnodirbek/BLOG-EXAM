@@ -8,9 +8,7 @@ import { TOKEN } from "../../../../constants";
 import "./style.scss";
 import logo from "../../../../assets/images/svg/logo.svg";
 import bars from "../../../../assets/images/png/bars.png";
-import logoutIcon from "../../../../assets/images/svg/logout.svg"
-
-
+import logoutIcon from "../../../../assets/images/svg/logout.svg";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -37,7 +35,6 @@ const Header = () => {
         <div className="wrap">
           {isAuthenticated ? (
             <div className="logo">
-              <img onClick={logout} src={logoutIcon} alt="" title="Logout" />
               <NavLink to="/myposts" style={{ color: "yellow" }}>
                 My Blogs
               </NavLink>
@@ -47,34 +44,38 @@ const Header = () => {
               <img src={logo} alt="" />
             </NavLink>
           )}
-          <ul className={`nav-item ${openBars ? "open" : "close"}`}>
-            <li className="nav-menu">
-              <NavLink to="/">Home</NavLink>
-            </li>
+          <div className="menu">
+            <img onClick={logout} src={logoutIcon} alt="" title="Logout" />
 
-            <li className="nav-menu">
-              <NavLink to="/all-posts">Blog</NavLink>
-            </li>
-            <li className="nav-menu">
-              <NavLink to="/about-us">About Us</NavLink>
-            </li>
-            <li className="nav-menu">
-              <NavLink to="/register">Register</NavLink>
-            </li>
-            <li className="nav-menu">
-              {isAuthenticated ? (
-                <NavLink to="/account" className="navButton">
-                  <button>Account</button>
-                </NavLink>
-              ) : (
-                <NavLink to="/login" className="navButton">
-                  <button>Login</button>
-                </NavLink>
-              )}
-            </li>
-          </ul>
-          <div className="bars" onClick={open}>
-            <img src={bars} alt="" />
+            <ul className={`nav-item ${openBars ? "open" : "close"}`}>
+              <li className="nav-menu">
+                <NavLink to="/">Home</NavLink>
+              </li>
+
+              <li className="nav-menu">
+                <NavLink to="/all-posts">Blog</NavLink>
+              </li>
+              <li className="nav-menu">
+                <NavLink to="/about-us">About Us</NavLink>
+              </li>
+              <li className="nav-menu">
+                <NavLink to="/register">Register</NavLink>
+              </li>
+              <li className="nav-menu">
+                {isAuthenticated ? (
+                  <NavLink to="/account" className="navButton">
+                    <button>Account</button>
+                  </NavLink>
+                ) : (
+                  <NavLink to="/login" className="navButton">
+                    <button>Login</button>
+                  </NavLink>
+                )}
+              </li>
+            </ul>
+            <div className="bars" onClick={open}>
+              <img src={bars} alt="" />
+            </div>
           </div>
         </div>
       </nav>
