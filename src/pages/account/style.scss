@@ -1,16 +1,88 @@
-.register {
-  h2 {
-    color: #232536;
-    text-align: center;
-    font-family: Sen;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 64px;
-    letter-spacing: -2px;
-  }
-}
+@import url("https://fonts.googleapis.com/css2?family=Tourney:wght@500&display=swap");
 
-.spinning{
-  display: flex;
+#accountPage {
+  padding: 70px 0;
+  .accountPage {
+    .react-tabs {
+      .react-tabs__tab-list {
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 10px;
+        border: none;
+        .react-tabs__tab {
+          text-align: center;
+          font-size: 24px;
+          font-family: "Sen";
+          padding-top: 20px;
+          padding-bottom: 20px;
+          background-color: white;
+          border: 1px dashed #232536;
+          border-radius: 10px;
+          transition: 0.2s;
+          &:hover {
+            color: orange;
+            border: 1px solid orange;
+          }
+        }
+        .react-tabs__tab--selected {
+          background-color: #232536;
+          color: #ffd050;
+          &:hover {
+            color: #ffd050;
+            border: 1px solid #232536;
+          }
+        }
+      }
+      .tabContent {
+        margin-top: 50px;
+      }
+      .user-container {
+        & * {
+          font-family: "Sen";
+        }
+        .ant-input {
+          padding: 15px;
+          font-size: 16px;
+        }
+        .ant-upload-select {
+          height: 500px;
+          border-radius: 20px;
+        }
+        .avatar-uploader * {
+          width: 100%;
+          .ant-upload-wrapper,
+          .ant-upload {
+            height: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+          }
+        }
+        .ant-btn {
+          padding: 15px 0;
+          height: auto;
+          width: 100%;
+          font-size: 24px;
+          background: #ffd050;
+          color: #232536;
+          font-family: "Sen";
+          &:hover {
+            background-color: #ffbb00;
+          }
+        }
+        .ant-picker {
+          padding: 15px;
+          & * {
+            font-size: 20px;
+          }
+        }
+        .inputWrapper {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 20px;
+          align-items: baseline;
+        }
+      }
+    }
+  }
 }

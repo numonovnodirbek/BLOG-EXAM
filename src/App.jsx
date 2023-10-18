@@ -23,7 +23,7 @@ function App() {
   return (
     <Suspense fallback={<Loading />}>
       <BrowserRouter>
-        <ToastContainer />
+        <ToastContainer position="top-center" autoClose={1500}/>
         <Routes>
           <Route element={<FrontLayout />}>
             <Route index element={<HomePage />} />
@@ -49,8 +49,8 @@ function App() {
           </Route>
           {isAuthenticated && role === "admin" ? (
             <Route path="dashboard" element={<DashboardPage />} />
-        ) : null}
-        <Route path="*" element={<NotFoundPage />} />
+          ) : null}
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </Suspense>

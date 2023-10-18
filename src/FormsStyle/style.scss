@@ -13,11 +13,19 @@
     margin-bottom: 68px;
   }
   .form {
+    & * {
+      font-family: "Sen";
+    }
     .input {
       width: 100%;
       padding: 24px;
       font-size: 16px;
       margin-bottom: 20px;
+    }
+    label {
+      display: inline-block;
+      font-size: 24px;
+      margin-bottom: 10px;
     }
     .button {
       width: 100%;
@@ -26,9 +34,9 @@
       color: #232536;
       font-family: "Sen";
       font-size: 24px;
-      transition: .3s;
+      transition: 0.3s;
       border: none;
-      &:hover{
+      &:hover {
         background-color: #ffbb00;
       }
     }

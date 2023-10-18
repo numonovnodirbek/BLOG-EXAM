@@ -1,7 +1,7 @@
 import axios from "axios";
-import { ENDPOINT, TOKEN } from "../constants";
-
 import Cookies from "js-cookie";
+import { message } from "antd";
+import { ENDPOINT, TOKEN } from "../constants";
 
 const request = axios.create({
   baseURL: `${ENDPOINT}api/v1/`,
@@ -10,5 +10,15 @@ const request = axios.create({
     Authorization: `Bearer ${Cookies.get(TOKEN)}`,
   },
 });
+
+request.interceptors.response.use(
+  (response) => response,
+  (err) => {
+    console.log("Err: ", err);
+    message.error(err.response.data);
+
+    return Promise.reject(err);
+  }
+);
 
 export default request;

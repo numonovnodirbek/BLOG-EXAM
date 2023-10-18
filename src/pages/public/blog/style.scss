@@ -10,6 +10,25 @@
     }
   }
 
+  .blog-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .addPostBtn{
+      padding: 10px 20px;
+      height: auto;
+      font-size: 24px;
+      background: #ffd050;
+      color: #232536;
+      font-family: "Sen";
+      transition: 0.3s;
+      border: none;
+      &:hover {
+        background-color: #ffbb00;
+      }
+    }
+  }
+
   h1 {
     margin-top: 54px;
     margin-bottom: 32px;

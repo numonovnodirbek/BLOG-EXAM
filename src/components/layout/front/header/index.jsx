@@ -39,7 +39,7 @@ const Header = () => {
             <div className="logo">
               <img onClick={logout} src={logoutIcon} alt="" title="Logout" />
               <NavLink to="/myposts" style={{ color: "yellow" }}>
-                My Posts
+                My Blogs
               </NavLink>
             </div>
           ) : (

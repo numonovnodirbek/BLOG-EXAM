@@ -11,7 +11,7 @@ import "../../../FormsStyle/style.scss";
 
 import Cookies from "js-cookie";
 import { ROLE, TOKEN } from "../../../constants";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
 const LoginPage = () => {
   const { setIsAuthenticated, setRole } = useContext(AuthContext);
@@ -20,31 +20,29 @@ const LoginPage = () => {
     formState: { errors },
     register,
     handleSubmit,
-    reset,
+    // reset,
   } = useForm({
     resolver: yupResolver(loginSchema),
   });
 
   const onSubmit = async (data) => {
-    try {
-      let {
-        data: { token, role },
-      } = await request.post("/auth/login", data);
-      if (role === "user") {
-        navigate("/myposts");
-      } else if (role === "admin") {
-        navigate("/dashboard");
-      }
-      setIsAuthenticated(true);
-      setRole(role);
-      Cookies.set(TOKEN, token);
-      Cookies.set(ROLE, role);
-      setIsAuthenticated(true);
-      reset;
-    } catch (error) {
-      toast.error("Error");
+    let {
+      data: { token, role },
+    } = await request.post("/auth/login", data);
+    if (role === "user") {
+      navigate("/myposts");
+    } else if (role === "admin") {
+      navigate("/dashboard");
     }
+    setIsAuthenticated(true);
+    setRole(role);
+    Cookies.set(TOKEN, token);
+    Cookies.set(ROLE, role);
+    setIsAuthenticated(true);
+    // reset;
+    request.defaults.headers.Authorization = "Bearer " + token;
   };
+
   return (
     <section id="loginPage">
       <div className="form-container">

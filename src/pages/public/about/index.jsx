@@ -1,9 +1,18 @@
+import { useState } from "react";
 import foto from "../../../assets/images/png/friends.png";
 import foto2 from "../../../assets/images/png/three-friends.png";
 
 import "./style.scss";
 
 const AboutUsPage = () => {
+  const [file, setFile] = useState();
+  function handleChange(e) {
+    console.log(e.target.files);
+    setFile(URL.createObjectURL(e.target.files[0]));
+  }
+  const handleClear = () => {
+    setFile("");
+  };
   return (
     <section id="about">
       <div className="container">
@@ -69,6 +78,13 @@ const AboutUsPage = () => {
             </p>
           </div>
         </div>
+      </div>
+
+      <div className="App">
+        <h2>Add Image:</h2>
+        <input type="file" onChange={handleChange} />
+        <img src={file} />
+        <button onClick={handleClear}>Clear</button>
       </div>
     </section>
   );

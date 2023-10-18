@@ -3,11 +3,12 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import request from "../../../server";
+import getImage from "../../../utils/getImage";
 
 // import { ENDPOINT } from "../../../constants";
 
 import backgound from "../../../assets/images/png/BMW.jpg";
-import avatar from "../../../assets/images/png/avatar.png"
+import avatar from "../../../assets/images/png/avatar.png";
 import "./style.scss";
 import Loading from "../../../components/share/Loading";
 
@@ -46,7 +47,7 @@ const BlogPostsPage = () => {
               // src={`${ENDPOINT}upload/${data.photo._id}.${
               //   data.photo.name.split(".")[1]
               // }`}
-              src={backgound}
+              src={backgound || `${getImage(data.photo._id)}.jpg`}
               alt="Photo Not Found"
             />
             <div className="blog-content">
@@ -54,10 +55,8 @@ const BlogPostsPage = () => {
                 <img
                   width="50"
                   height="50"
-                  // src={`${ENDPOINT}upload/${data.photo._id}.${
-                  //   data.photo.name.split(".")[1]
-                  // }`}
                   src={avatar}
+                  // src={avatar}
                   alt="Photo Not Found"
                 />
                 <div className="ava-info">
@@ -74,7 +73,11 @@ const BlogPostsPage = () => {
               </div>
               <div className="blog-start">
                 <p className="blog-biznes">
-                  Startup (#{data.name}, #screen, #life)
+                  Startup (
+                  {data?.tags.map((el, i) => (
+                    <span key={i}>#{el},</span>
+                  ))}
+                  )
                 </p>
               </div>
               <div className="blog-lorem">

@@ -11,6 +11,11 @@ const registerSchema = yup.object().shape({
     .string("Username must be a string !")
     .required("Please enter username!"),
   password: yup
+    .string("Password must be a string !")
+    .required("Please enter password !")
+    .min(4, `Password's minimal length must be 4`)
+    .max(8, `Password's maximal length must be 8`),
+  confirmPassword: yup
     .string("Name must be a string !")
     .required("Please enter password !")
     .min(4, `Password's minimal length must be 4`)

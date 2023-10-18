@@ -10,21 +10,45 @@
       width: 100%;
       max-width: 500px;
       object-fit: cover;
+      max-height: 300px;
     }
 
     .card-title {
       flex-wrap: wrap;
       max-width: 650px;
-
-      h3 {
-        color: var(--Purple, #592EA9);
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 20px;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h3 {
+          color: var(--Purple, #592ea9);
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 20px;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+        }
+        .actions{
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          .action-btn{
+            padding: 12px 15px;
+            font-size: 16px;
+            border-radius: 10px;
+            color: white;
+            transition: .3s;
+            border: none;
+            cursor: pointer;
+          }
+          .edit{
+            background-color: dodgerblue;
+          }
+          .delete{
+            background-color: crimson;
+          }
+        }
       }
 
       h5 {
@@ -41,7 +65,7 @@
 
       p {
         margin-top: 16px;
-        color: var(--Medium-grey, #6D6E76);
+        color: var(--Medium-grey, #6d6e76);
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
@@ -62,7 +86,6 @@
         border: none;
         font-family: "Sen";
         cursor: pointer;
-
       }
 
       .delete {
