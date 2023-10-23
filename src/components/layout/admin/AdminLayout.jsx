@@ -123,7 +123,7 @@ const App = () => {
             textAlign: "center",
           }}
         >
-          Nes Wave @2023 all rights reserved
+          Nodirbek_dev @2023 all rights reserved
         </Footer>
       </Layout>
     </Layout>
