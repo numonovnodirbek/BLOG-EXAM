@@ -38,15 +38,15 @@ const HomePage = () => {
               <Fragment>
                 <div className="hero-text">
                   <p className="postedOn">
-                    POSTED ON <span>{data.category?.name}</span>
+                    POSTED ON <span>{data?.category?.name}</span>
                   </p>
                   <p className="desc">
-                    {data.category?.description.slice(0, 50)}...
+                    {data?.category?.description.slice(0, 50)}...
                   </p>
                   <p className="fullname">
                     By{" "}
                     <span>
-                      {data.user?.first_name} {data.user?.last_name}
+                      {data?.user?.first_name} {data?.user?.last_name}
                     </span>{" "}
                     | October 15, 2023
                   </p>

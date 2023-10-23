@@ -32,7 +32,7 @@ const LoginPage = () => {
     if (role === "user") {
       navigate("/myposts");
     } else if (role === "admin") {
-      navigate("/dashboard");
+      navigate("/dashboard"); 
     }
     setIsAuthenticated(true);
     setRole(role);

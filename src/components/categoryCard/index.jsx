@@ -78,8 +78,8 @@ const CategorySlider = () => {
                 <Link className="category-slider-item" to={`/category/${el._id}`}>
                   <div className="card-box">
                     <img src={busines} alt="" />
-                    <p className="name">{el.name}</p>
-                    <p className="card-desc">{el.description.slice(0, 50)}</p>
+                    <p className="name">{el?.name}</p>
+                    <p className="card-desc">{el?.description.slice(0, 50)}</p>
                   </div>
                 </Link>
               </div>

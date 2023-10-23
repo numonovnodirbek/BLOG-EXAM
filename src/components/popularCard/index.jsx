@@ -72,10 +72,10 @@ const PopularSlider = () => {
                   <img src={foto} alt="img" />
                 </Link>
                 <p className="info">
-                  By <span>{el.user.first_name}</span> | {el.createdAt.split("T")[0]}
+                  By <span>{el?.user?.first_name}</span> | {el?.createdAt.split("T")[0]}
                 </p>
-                <p className="lor">{el.title}</p>
-                <p className="lor-2">{el.description.slice(0, 120)}...</p>
+                <p className="lor">{el?.title}</p>
+                <p className="lor-2">{el?.description.slice(0, 120)}...</p>
               </div>
             );
           })}
